@@ -9,7 +9,25 @@ mode = 'decrypt' # set to whether 'encypt' or 'decrypt'
 
 # Every possible symbol that can be encypted:
 SYMBOLS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890 !?.'
+'''
+def shift_amount(i):
+# function to deal with shift
+# Will determine the shift, taking into account the length of the alphabet.
+# Takes integer - returns integer
+    return i%26
 
+
+def encrypt(text,required_shift):
+    out_string = ''
+    text = text.lower()
+    for char in text:
+        if char not in alphabet:
+            out_string = out_string + char
+        else:    
+            alpha_index = alphabet.find(char)
+            out_string = out_string + alphabet[shift_amount(alpha_index +required_shift)]
+    return out_string
+'''
 # store the encrypted/decrypted form of the message
 translated = ''
 
